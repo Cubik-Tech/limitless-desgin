@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*fonts*/
+@font-face {
+  font-family: "SF-Pro";
+  src: url("../../public/fonts/SF-Pro-Text-Regular.otf") format("opentype");
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: SF-Pro;
+}
+
+.sf-fro-font {
+  font-family: SF-Pro;
+}
+
+.gradienttext {
+  background: linear-gradient(180deg, #fff 0%, rgba(88, 255, 245, 0.79) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gray_gradient_text {
+  background: linear-gradient(180deg, #fff 0%, rgba(95, 95, 95, 0.79) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light_gray_gradient_text {
+  background: linear-gradient(180deg, rgba(118, 118, 118, 0.79) 0%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services_hero_gradient {
+  background: linear-gradient(180deg, #fff 48.44%, #767676 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services_tag_gradient_text {
+  background: linear-gradient(180deg, #fff 0%, #5f5f5f 78.65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headline_gradient_text {
+  background: linear-gradient(180deg, #fff 0%, #676767 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aboutus_gradient_text {
+  background: linear-gradient(180deg, #fff 0%, rgba(253, 253, 253, 0.7) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aboutus_card_gradient {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.gradient_border {
+  position: relative;
+  background: #000;
+  margin: 3px;
+  border-radius: 100px;
+}
+.gradient_border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background-image: linear-gradient(0deg, #2f2f2f, #ffffff);
+}
+
+.tagcircle_gradient {
+  background: linear-gradient(180deg, #fff 0%, #5f5f5f 78.65%);
+}
+
+.graylight_heading_backdrop {
+  border-radius: 531px;
+  background: rgba(255, 255, 255, 0.2);
+  filter: blur(100px);
+  width: 50%;
+  height: 100%;
+}
+
+.herotext {
+  text-align: center;
+  font-family: SF-Pro;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.services_herotext {
+  text-align: center;
+  font-family: SF-Pro;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.subHeadingtext {
+  font-family: SF-Pro;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.subHeadingSmText {
+  font-family: SF-Pro;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.subHeadingxsText {
+  font-family: SF-Pro;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.description_text {
+  font-size: 20px;
+}
+
+@layer base {
+  .paddingX {
+    @apply px-44;
+  }
+
+  .paddingXSm {
+    @apply px-20;
+  }
+
+  .paddingXXs {
+    @apply px-12;
+  }
+}
+
+.eclipseback {
+  border-radius: 325px;
+  background: rgba(255, 255, 255, 0.2);
+  filter: blur(100px);
+}
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-card > img {
+  height: 80%;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  position: absolute;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  gap: 16px;
+  width: 200%;
+  height: 100%;
+  animation: slide 8s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
