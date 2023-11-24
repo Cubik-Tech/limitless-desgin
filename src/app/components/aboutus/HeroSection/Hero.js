@@ -3,7 +3,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="w-full h-full py-64 relative overflow-hidden flex items-center">
+    <div className="w-full h-full py-48 relative overflow-hidden flex items-center">
       <img
         className="w-full h-full absolute top-0 left-0 bottom-0 right-0"
         alt="About Us Hero"

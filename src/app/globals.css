@@ -173,17 +173,57 @@ body {
   font-size: 20px;
 }
 
+@media only screen and (max-width: 640px) {
+  .herotext {
+    font-size: 60px;
+  }
+
+  .services_herotext {
+    font-size: 50px;
+  }
+
+  .subHeadingtext {
+    font-size: 40px;
+  }
+
+  .subHeadingSmText {
+    font-size: 30px;
+  }
+
+  .subHeadingxsText {
+    font-size: 20px;
+  }
+
+  .description_text {
+    font-size: 16px;
+  }
+}
+
 @layer base {
   .paddingX {
-    @apply px-44;
+    @apply px-10;
   }
 
   .paddingXSm {
-    @apply px-20;
+    @apply px-8;
   }
 
   .paddingXXs {
-    @apply px-12;
+    @apply px-6;
+  }
+
+  @screen xl {
+    .paddingX {
+      @apply px-44;
+    }
+
+    .paddingXSm {
+      @apply px-20;
+    }
+
+    .paddingXXs {
+      @apply px-12;
+    }
   }
 }
 
@@ -233,4 +273,15 @@ body {
   100% {
     left: -100%;
   }
+}
+
+.slide-up-animation {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.slide-up-animation.active {
+  opacity: 1;
+  transform: translateY(0);
 }

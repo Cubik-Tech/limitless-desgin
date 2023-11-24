@@ -67,57 +67,40 @@ export default function Home() {
         <div className="absolute w-full py-6">
           <Header />
         </div>
-      </div>{" "}
-      <HeroSection />{" "}
-      <Component id={1}>
-        <ServicesDisplay
-          heading={"UI/UX Design"}
-          image={"/images/services/ui-ux.png"}
-          tags={[
-            "Web Designing",
-            "Mobile Responsive Designing",
-            "App Designing",
-          ]}
-          content={[
-            "Seamless and user-friendly digital experiences.",
-            " Data-driven insights combined with creativity. ",
-            "Intuitive interface design for optimal user engagement.",
-            " Putting the user at the center of our design process.",
-            " Aim to enhance navigation, engagement, and conversions.",
-          ]}
-          imgclassName={"w-full"}
-        />
-      </Component>
-      <Component id={2}>
-        <ServicesDisplay
-          heading={"Graphic Design"}
-          image={"/images/services/graphic.png"}
-          tags={["3D and 2D Illustrations", "Artworks"]}
-          content={[
-            "Transforming ideas into visually stunning realities.",
-            " Crafting marketing materials, social media graphics, and more. ",
-            "Creating a visually captivating brand identity.",
-            "Conveying your brand's message through compelling visuals.",
-            " Making a memorable mark in the visually saturated world.",
-          ]}
-          imgclassName={"w-1/3"}
-        />
-      </Component>
-      <Component id={3}>
-        <ServicesDisplay
-          heading={"Logo Design"}
-          image={"/images/services/logo.png"}
-          tags={["Website Logo Design", "Brand Logo Design"]}
-          content={[
-            "Craft logos that are powerful brand representations.",
-            "Careful research, conceptualization, and execution.",
-            "Logo as the unforgettable face of your brand.",
-            "Unique and memorable logo designs.",
-            "Leave a lasting impression on your audience.",
-          ]}
-          imgclassName={"w-2/3"}
-        />
-      </Component>
+      </div>
+      <HeroSection /> {/* <Component id={1}> */}
+      <ServicesDisplay />
+      {/* </Component> */}
+      {/* <Component id={2}>
+          <ServicesDisplay
+            heading={"Graphic Design"}
+            image={"/images/services/graphic.png"}
+            tags={["3D and 2D Illustrations", "Artworks"]}
+            content={[
+              "Transforming ideas into visually stunning realities.",
+              " Crafting marketing materials, social media graphics, and more. ",
+              "Creating a visually captivating brand identity.",
+              "Conveying your brand's message through compelling visuals.",
+              " Making a memorable mark in the visually saturated world.",
+            ]}
+            imgclassName={"w-1/3"}
+          />
+        </Component>
+        <Component id={3}>
+          <ServicesDisplay
+            heading={"Logo Design"}
+            image={"/images/services/logo.png"}
+            tags={["Website Logo Design", "Brand Logo Design"]}
+            content={[
+              "Craft logos that are powerful brand representations.",
+              "Careful research, conceptualization, and execution.",
+              "Logo as the unforgettable face of your brand.",
+              "Unique and memorable logo designs.",
+              "Leave a lasting impression on your audience.",
+            ]}
+            imgclassName={"w-2/3"}
+          />
+        </Component> */}
       <ToolsDisplay />
       <ExcellenceSection />
       <WhyChooseUs />

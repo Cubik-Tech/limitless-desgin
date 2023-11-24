@@ -26,12 +26,12 @@ const LogoDesigning = () => {
             <img
               alt="logo-hero-top"
               src="/images/services/logo/herologo.svg"
-              className="w-2/10 absolute top-0"
+              className="sm:w-3/12 max-sm:w-6/12 absolute top-0"
             />
             <img
               alt="logo-hero"
               src="/images/services/logo/heroshadow.png"
-              className="w-full"
+              className="w-full max-sm:mt-6"
             />
           </div>
         </HeroSection>

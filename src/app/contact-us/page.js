@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import ServiceHead from "../(services-pages)/services/Base/ServiceHead";
 
 const InputCombo = ({ name, placeholder, handleChange, value }) => {
   return (
@@ -26,17 +27,20 @@ const InfoTab = ({ icon, info }) => {
 
 const ContactUs = () => {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen sm:h-screen">
+      <div className="absolute w-full">
+        <ServiceHead />
+      </div>
       <div className="w-full h-full relative flex">
-        <div className="w-1/2 h-full">
+        <div className="w-1/2 h-full max-sm:hidden">
           <img
             className="w-full h-full"
             alt="contact cover"
             src="/images/contact.png"
           />
         </div>
-        <div className="w-1/2 pt-24 pb-10 px-16 flex flex-col justify-between h-full">
-          <div className="flex flex-col w-10/12 pb-12 space-y-8 grow justify-between relative">
+        <div className="w-1/2 max-sm:w-full pt-24 pb-10 paddingXXs flex flex-col justify-between h-full">
+          <div className="flex flex-col max-sm:w-full w-10/12 pb-12 space-y-8 grow justify-between relative">
             <h1 className="subHeadingxsText">Hi, have a project in mind?</h1>
             <InputCombo name={"name"} placeholder={"Type here"} />
             <InputCombo name={"email"} placeholder={"abc@gmail.com"} />
@@ -63,7 +67,7 @@ const ContactUs = () => {
               <span className="absolute inset-0 border-2 border-gray-500 rounded-full"></span>
             </button>
           </div>
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full max-sm:flex-col max-sm:space-y-4 flex items-center justify-between">
             <InfoTab icon={"/images/location.svg"} info={"New Delhi, India"} />
             <InfoTab
               icon={"/images/email.svg"}

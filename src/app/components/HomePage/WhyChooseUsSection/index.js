@@ -3,7 +3,7 @@ import React from "react";
 
 const ReasonComponent = ({ heading, content }) => {
   return (
-    <div className="flex items-start space-x-3 w-[500px] mx-5">
+    <div className="flex items-start space-x-3 sm:w-[500px] mx-5">
       <div className="w-16">
         <img alt="logo" className="w-full" src="/images/logo/small.png" />
       </div>
@@ -17,8 +17,8 @@ const ReasonComponent = ({ heading, content }) => {
 
 const WhyChooseUs = () => {
   return (
-    <div className="w-full h-screen paddingXSm flex flex-col items-center justify-center">
-      <div className="flex  w-full relative space-x-12">
+    <div className="w-full sm:h-screen paddingXSm flex flex-col items-center justify-center">
+      <div className="flex max-sm:flex-col max-sm:space-y-6  w-full relative sm:space-x-12">
         <div className="relative w-full flex flex-col items-end space-y-16  py-4">
           <ReasonComponent
             heading={"On-Time Guarantee"}
@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
               "We are committed to delivering your designs on or before the promised deadline."
             }
           />
-          <p className="light_gray_gradient_text font-bold text-[80px] py-3 tracking-wide">
+          <p className="max-sm:hidden light_gray_gradient_text font-bold text-[80px] py-3 tracking-wide">
             Lightning Fast
           </p>
           <ReasonComponent
@@ -36,7 +36,7 @@ const WhyChooseUs = () => {
             }
           />
         </div>
-        <div className="w-[600px] relative">
+        <div className="w-[600px] relative max-sm:hidden">
           <div
             style={{ zIndex: 10 }}
             className="w-full relative flex group items-center justify-center p-1 cursor-pointer"
@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
               "We prioritize speed without sacrificing quality, delivering your designs in record time."
             }
           />
-          <p className="light_gray_gradient_text font-bold text-[80px] py-3 tracking-wide">
+          <p className="max-sm:hidden light_gray_gradient_text font-bold text-[80px] py-3 tracking-wide">
             Design Delivery
           </p>
           <ReasonComponent

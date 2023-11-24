@@ -1,6 +1,11 @@
+"use client";
+
+import useWindowDimensions from "@/app/hooks/useWindowDimension";
 import React from "react";
 
 const HeroSection = ({ heading, tags, children }) => {
+  const { width } = useWindowDimensions();
+
   return (
     <div className="paddingXXs w-full">
       <div className="w-full relative border border-[#fff] rounded-lg pb-12  flex flex-col items-center justify-center space-y-12">
@@ -11,11 +16,11 @@ const HeroSection = ({ heading, tags, children }) => {
             {heading}
           </h1>
         </div>
-        <div className="flex items-center justify-center space-x-8">
+        <div className="flex max-sm:flex-col max-sm:w-fit sm:items-center justify-center max-sm:space-y-6 sm:space-x-8">
           {tags.map((tag, index) => {
             return (
               <div key={index}>
-                {index === 0 ? (
+                {index === 0 && width > 640 ? (
                   <p className="services_tag_gradient_text description_text">
                     {tag}
                   </p>

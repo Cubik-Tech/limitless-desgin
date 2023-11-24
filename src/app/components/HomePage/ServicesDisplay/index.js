@@ -1,49 +1,154 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const ServicesDisplay = ({ heading, image, tags, content, imgclassName }) => {
+const ServicesDisplay = () => {
+  const [heading, setHeading] = useState("UI/UX Design");
+  const [image, setImage] = useState("/images/services/ui-ux.png");
+  const [tags, setTags] = useState([
+    "Web Designing",
+    "Mobile Responsive Designing",
+    "App Designing",
+  ]);
+  const [imgclassName, setImgclassName] = useState("w-full");
+  const [content, setContent] = useState([
+    "Seamless and user-friendly digital experiences.",
+    " Data-driven insights combined with creativity. ",
+    "Intuitive interface design for optimal user engagement.",
+    " Putting the user at the center of our design process.",
+    " Aim to enhance navigation, engagement, and conversions.",
+  ]);
+  const [showClassNames, setShowClassNames] = useState("");
+  const [contentIndex, setContentIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // You can adjust the scroll threshold as needed
+      const scrollThreshold1 = 2 * window?.innerHeight;
+      const scrollThreshold2 = 3 * window?.innerHeight;
+
+      // Get the current scroll position
+      const scrollY = window.scrollY || window.pageYOffset;
+      const sectionHeight = window?.innerHeight;
+      if (sectionHeight) {
+        const scrollPercentage = (scrollY / sectionHeight) * 100;
+        console.log(scrollPercentage, "percent");
+        // Update content based on scroll position
+        if (
+          (scrollPercentage >= 180 && scrollPercentage < 220) ||
+          (scrollPercentage >= 280 && scrollPercentage < 320)
+        ) {
+          setShowClassNames("slide-up-animation");
+        } else {
+          setShowClassNames("slide-up-animation active");
+        }
+      }
+      // Update content based on scroll position
+
+      if (scrollY > scrollThreshold2) {
+        setHeading("Logo Design");
+        setImage("/images/services/logo.png");
+        setTags(["Website Logo Design", "Brand Logo Design"]);
+        setImgclassName("w-2/3");
+        setContent([
+          "Craft logos that are powerful brand representations.",
+          "Careful research, conceptualization, and execution.",
+          "Logo as the unforgettable face of your brand.",
+          "Unique and memorable logo designs.",
+          "Leave a lasting impression on your audience.",
+        ]);
+        setContentIndex(2);
+      } else if (scrollY > scrollThreshold1) {
+        setHeading("Graphic Design");
+        setImage("/images/services/graphic.png");
+        setTags(["3D and 2D Illustrations", "Artworks"]);
+        setImgclassName("w-1/3");
+        setContent([
+          "Transforming ideas into visually stunning realities.",
+          " Crafting marketing materials, social media graphics, and more. ",
+          "Creating a visually captivating brand identity.",
+          "Conveying your brand's message through compelling visuals.",
+          " Making a memorable mark in the visually saturated world.",
+        ]);
+        setContentIndex(1);
+      } else {
+        setHeading("UI/UX Design");
+        setImage("/images/services/ui-ux.png");
+        setTags([
+          "Web Designing",
+          "Mobile Responsive Designing",
+          "App Designing",
+        ]);
+        setImgclassName("w-full");
+        setContent([
+          "Seamless and user-friendly digital experiences.",
+          " Data-driven insights combined with creativity. ",
+          "Intuitive interface design for optimal user engagement.",
+          " Putting the user at the center of our design process.",
+          " Aim to enhance navigation, engagement, and conversions.",
+        ]);
+        setContentIndex(0);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once on mount
+
+  console.log(contentIndex, showClassNames);
+
   return (
-    <div className="w-full h-screen paddingX flex flex-col items-center justify-center space-y-20 ">
-      <div className="w-11/12  flex items-center justify-center mt-16">
-        <div className="flex items-center">
-          <div className="flex flex-col items-start w-1/2 space-y-8 my-4">
-            <h2 className="gray_gradient_text subHeadingSmText">
-              We Offer{" "}
-              <span className="gradienttext  subHeadingtext">{heading}</span>
-            </h2>
-            <div className="description_text font-medium flex flex-col space-y-3">
-              {/* Seamless and user-friendly digital experiences.
-              <br />
-              <br /> Data-driven insights combined with creativity.
-              <br />
-              <br /> Intuitive interface design for optimal user engagement.{" "}
-              <br />
-              <br />
-              Putting the user at the center of our design process.
-              <br />
-              <br /> Aim to enhance navigation, engagement, and conversions. */}
-              {content.map((cont, index) => {
-                return <p key={index}>{cont}</p>;
-              })}
+    <div className="w-full h-[400vh] relative paddingX   ">
+      <div className="w-11/12 top-0 flex flex-col items-center justify-center sticky h-screen mx-auto max-sm:space-y-12 sm:space-y-20 transition-all duration-500">
+        <div className="w-full flex items-center justify-center mt-16">
+          <div className="flex max-sm:flex-col items-center max-sm:space-y-6">
+            <div className="flex flex-col items-start max-sm:w-full w-7/12 space-y-8 my-4">
+              <h2 className="gray_gradient_text subHeadingSmText">
+                We Offer{" "}
+                <span
+                  className={
+                    "gradienttext  subHeadingtext transition-all duration-500 " +
+                    showClassNames
+                  }
+                >
+                  {heading}
+                </span>
+              </h2>
+              <div className="description_text font-medium flex flex-col space-y-3">
+                {content.map((cont, index) => {
+                  return (
+                    <p key={index} className={showClassNames}>
+                      {cont}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="w-5/12 max-sm:w-full flex items-center justify-center relative">
+              <div className="eclipseback absolute left-1/2 -translate-x-1/2 w-full h-96"></div>
+              <img
+                style={{ zIndex: 2 }}
+                src={image}
+                alt=""
+                className={`${imgclassName}  ${showClassNames}`}
+              />
             </div>
           </div>
-          <div className="w-1/2 flex items-center justify-center relative">
-            <div className="eclipseback absolute left-1/2 -translate-x-1/2 w-full h-96"></div>
-            <img
-              style={{ zIndex: 2 }}
-              src={image}
-              alt=""
-              className={imgclassName}
-            />
-          </div>
         </div>
-      </div>
-      <div className="w-10/12 flex items-center space-x-12 justify-center paddingX gradient_border py-4 description_text font-bold">
-        {tags.map((tag, index) => (
-          <span key={index} className="gradienttext">
-            {tag}
-          </span>
-        ))}
+        <div className="w-10/12 max-sm:w-full max-sm:flex-col flex items-center max-sm:space-y-6  sm:space-x-12 justify-center paddingX gradient_border max-sm:py-10 py-4 description_text font-bold">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className={"gradienttext text-center " + showClassNames}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
