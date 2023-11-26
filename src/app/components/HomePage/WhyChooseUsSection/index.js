@@ -8,7 +8,9 @@ const ReasonComponent = ({ heading, content }) => {
         <img alt="logo" className="w-full" src="/images/logo/small.png" />
       </div>
       <div className="flex flex-col space-y-1 sf-fro-font">
-        <h3 className="gradienttext text-[24px] font-bold ">{heading}</h3>
+        <h3 className="gradienttext xxl:text-[24px] xl:text-[22px] lg:text-[20px] text-[18px] font-bold ">
+          {heading}
+        </h3>
         <p className="description_text font-medium">{content}</p>
       </div>
     </div>
@@ -18,15 +20,15 @@ const ReasonComponent = ({ heading, content }) => {
 const WhyChooseUs = () => {
   return (
     <div className="w-full sm:h-screen paddingXSm flex flex-col items-center justify-center">
-      <div className="flex max-sm:flex-col max-sm:space-y-6  w-full relative sm:space-x-12">
-        <div className="relative w-full flex flex-col items-end space-y-16  py-4">
+      <div className="flex max-lg:flex-col max-lg:space-y-6  w-full relative lg:space-x-12">
+        <div className="relative grow  flex flex-col max-lg:items-center lg:items-end space-y-16  py-4">
           <ReasonComponent
             heading={"On-Time Guarantee"}
             content={
               "We are committed to delivering your designs on or before the promised deadline."
             }
           />
-          <p className="max-sm:hidden light_gray_gradient_text font-bold text-[80px] py-3 tracking-wide">
+          <p className="max-lg:hidden light_gray_gradient_text font-bold xxl:text-[70px] xl:text-[55px] lg:text-[40px] py-3 tracking-normal">
             Lightning Fast
           </p>
           <ReasonComponent
@@ -36,12 +38,12 @@ const WhyChooseUs = () => {
             }
           />
         </div>
-        <div className="w-[600px] relative max-sm:hidden">
+        <div className="w-1/3 max-w-[250px] relative max-lg:hidden">
           <div
             style={{ zIndex: 10 }}
-            className="w-full relative flex group items-center justify-center p-1 cursor-pointer"
+            className="w-full h-full relative flex group items-center justify-center p-1 cursor-pointer"
           >
-            <img src="/images/bolt.png" alt="" className="w-full h-full" />
+            <img src="/images/bolt.png" alt="" className="w-full " />
             <img
               src="/images/bolteffect.png"
               alt=""
@@ -49,14 +51,14 @@ const WhyChooseUs = () => {
             />
           </div>
         </div>
-        <div className="relative w-full flex flex-col items-start space-y-16 py-4 ">
+        <div className="relative grow flex flex-col max-lg:items-center lg:items-start space-y-16 py-4 ">
           <ReasonComponent
             heading={"Rapid Turnaround"}
             content={
               "We prioritize speed without sacrificing quality, delivering your designs in record time."
             }
           />
-          <p className="max-sm:hidden light_gray_gradient_text font-bold text-[80px] py-3 tracking-wide">
+          <p className="max-lg:hidden light_gray_gradient_text font-bold xxl:text-[70px] xl:text-[55px] lg:text-[40px] py-3 tracking-normal">
             Design Delivery
           </p>
           <ReasonComponent

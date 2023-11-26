@@ -23,14 +23,15 @@ const ServicesDisplay = () => {
   useEffect(() => {
     const handleScroll = () => {
       // You can adjust the scroll threshold as needed
-      const scrollThreshold1 = 2 * window?.innerHeight;
-      const scrollThreshold2 = 3 * window?.innerHeight;
+      const scrollThreshold1 = 2.3 * window?.innerHeight;
+      const scrollThreshold2 = 3.3 * window?.innerHeight;
 
       // Get the current scroll position
       const scrollY = window.scrollY || window.pageYOffset;
       const sectionHeight = window?.innerHeight;
+      const scrollPercentage = (scrollY / sectionHeight) * 100;
+
       if (sectionHeight) {
-        const scrollPercentage = (scrollY / sectionHeight) * 100;
         console.log(scrollPercentage, "percent");
         // Update content based on scroll position
         if (
@@ -44,7 +45,7 @@ const ServicesDisplay = () => {
       }
       // Update content based on scroll position
 
-      if (scrollY > scrollThreshold2) {
+      if (scrollPercentage > 320) {
         setHeading("Logo Design");
         setImage("/images/services/logo.png");
         setTags(["Website Logo Design", "Brand Logo Design"]);
@@ -57,7 +58,7 @@ const ServicesDisplay = () => {
           "Leave a lasting impression on your audience.",
         ]);
         setContentIndex(2);
-      } else if (scrollY > scrollThreshold1) {
+      } else if (scrollPercentage > 220) {
         setHeading("Graphic Design");
         setImage("/images/services/graphic.png");
         setTags(["3D and 2D Illustrations", "Artworks"]);
@@ -103,10 +104,10 @@ const ServicesDisplay = () => {
 
   return (
     <div className="w-full h-[400vh] relative paddingX   ">
-      <div className="w-11/12 top-0 flex flex-col items-center justify-center sticky h-screen mx-auto max-sm:space-y-12 sm:space-y-20 transition-all duration-500">
-        <div className="w-full flex items-center justify-center mt-16">
+      <div className="lg:w-11/12 w-full top-0 flex flex-col items-center justify-center sticky sm:h-screen mx-auto max-sm:space-y-12 sm:space-y-20 transition-all duration-500">
+        <div className="w-full flex items-center justify-center sm:mt-16">
           <div className="flex max-sm:flex-col items-center max-sm:space-y-6">
-            <div className="flex flex-col items-start max-sm:w-full w-7/12 space-y-8 my-4">
+            <div className="flex flex-col items-start max-sm:w-full w-7/12 sm:space-y-8 max-sm:space-y-6 my-4">
               <h2 className="gray_gradient_text subHeadingSmText">
                 We Offer{" "}
                 <span
@@ -118,7 +119,7 @@ const ServicesDisplay = () => {
                   {heading}
                 </span>
               </h2>
-              <div className="description_text font-medium flex flex-col space-y-3">
+              <div className="description_text font-medium flex flex-col sm:space-y-3 max-sm:space-y-2">
                 {content.map((cont, index) => {
                   return (
                     <p key={index} className={showClassNames}>
@@ -139,7 +140,7 @@ const ServicesDisplay = () => {
             </div>
           </div>
         </div>
-        <div className="w-10/12 max-sm:w-full max-sm:flex-col flex items-center max-sm:space-y-6  sm:space-x-12 justify-center paddingX gradient_border max-sm:py-10 py-4 description_text font-bold">
+        <div className="w-10/12 max-sm:w-full max-sm:flex-col flex items-center max-sm:space-y-4  sm:space-x-12 justify-center sm:paddingX max-sm:px-3 gradient_border sm:rounded-full max-sm:rounded-xl max-sm:py-10 py-3 description_text font-bold">
           {tags.map((tag, index) => (
             <span
               key={index}

@@ -17,7 +17,7 @@ const Footer = () => {
           />
         </div>
 
-        <div className="w-full flex items-center justify-end">
+        <div className="w-full flex items-center sm:justify-end max-sm:justify-center">
           <p className="description_text">Address: Delhi, India</p>
         </div>
       </div>

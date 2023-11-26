@@ -5,15 +5,15 @@ import GetStartedCTA from "../../CTAs/GetStartedCTA";
 const ExcellenceSection = () => {
   return (
     <div className="w-full h-screen paddingX flex flex-col items-center justify-center">
-      <div className="flex max-sm:flex-col max-sm:space-y-6 items-center w-full relative ">
-        <div className="w-1/2 max-sm:w-full relative">
+      <div className="flex max-md:flex-col max-md:space-y-6 items-center w-full relative ">
+        <div className="w-1/2 max-md:w-full relative ">
           <img
             alt="Excellence"
             src="/images/excellence.png"
-            className="w-10/12"
+            className="w-11/12 max-sm:w-10/12 max-md:w-3/5 max-md:mx-auto"
           />
         </div>
-        <div className="w-1/2 max-sm:w-full sm:px-6 space-y-8 flex flex-col">
+        <div className="w-1/2 max-md:w-full sm:px-6 space-y-8 flex flex-col max-md:items-center">
           <div className=" space-y-4 flex flex-col">
             <h3 className="subHeadingxsText">Design Excellence Empowers</h3>
             <h2 className="gray_gradient_text subHeadingtext">

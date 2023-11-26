@@ -4,8 +4,8 @@ import SlidingComp from "./SlidingComp";
 const ToolsDisplay = () => {
   return (
     <div className="w-full h-screen paddingX flex flex-col items-center justify-center ">
-      <div className="flex max-sm:flex-col items-center max-sm:space-y-6 w-11/12 relative">
-        <div className="w-1/2 max-sm:w-full space-y-8 flex flex-col">
+      <div className="flex max-md:flex-col items-center max-md:space-y-6 w-11/12 relative">
+        <div className="w-1/2 max-md:w-full space-y-8 flex flex-col">
           <div className=" space-y-4 flex flex-col">
             <h2 className="gradienttext subHeadingtext">Cutting Edge Design</h2>
             <h3 className="gradienttext subHeadingxsText">
@@ -19,7 +19,7 @@ const ToolsDisplay = () => {
             visual identity is a key player in the journey to success.`}
           </p>
         </div>
-        <div className="w-1/2 max-sm:w-full relative flex flex-col items-center ml-auto space-y-10">
+        <div className="w-1/2 max-md:w-full relative flex flex-col items-center ml-auto space-y-10">
           <div className="w-10/12 max-sm:w-full max-sm:h-20 h-32 overflow-hidden relative">
             <SlidingComp
               images={[
@@ -39,7 +39,7 @@ const ToolsDisplay = () => {
               ]}
             />
           </div>
-          <div className="w-9/12  h-32  max-sm:h-20">
+          <div className="w-10/12 max-sm:w-full  h-32  max-sm:h-20">
             <SlidingComp
               images={[
                 "/images/ourtools/acro.png",

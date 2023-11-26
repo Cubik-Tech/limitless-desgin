@@ -10,6 +10,27 @@ const Header = () => {
   const { width } = useWindowDimensions();
   const [loading, setLoading] = useState(true);
 
+  const [changeColor, setChangeColor] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the scroll position is more than 30vh
+      if (window.scrollY > 0.3 * window.innerHeight) {
+        setChangeColor(true);
+      } else {
+        setChangeColor(false);
+      }
+    };
+
+    // Add a scroll event listener to the window
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures that the effect runs once after the initial render
+
   useEffect(() => {
     if (typeof window !== "undefined" && width > 0) {
       setLoading(false);
@@ -20,7 +41,12 @@ const Header = () => {
     !loading && (
       <div className="w-full relative py-3 ">
         {width > 768 ? (
-          <div className="flex items-center justify-center space-x-24 text-[18px] font-semibold">
+          <div
+            className={
+              "flex items-center justify-center space-x-24 text-[18px] font-semibold  w-max mx-auto px-16 py-3 rounded-full " +
+              (changeColor && "bg-black")
+            }
+          >
             <Link href="/">Home</Link>
             <Menu as="div" className="relative inline-block text-left">
               <div>

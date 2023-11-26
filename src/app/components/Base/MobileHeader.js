@@ -17,10 +17,16 @@ const MobileHeader = () => {
       </button>
 
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <div className="flex flex-col divide-y">
-          <Link href="/">Home</Link>
-          <Link href="/about-us">About us</Link>
-          <Link href="/contact-us">Get in Touch</Link>
+        <div className="flex flex-col divide-y text-black items-center justify-center h-full">
+          <Link href="/" className="w-full py-4 text-center">
+            Home
+          </Link>
+          <Link href="/about-us" className="w-full py-4 text-center">
+            About us
+          </Link>
+          <Link href="/contact-us" className="w-full py-4 text-center">
+            Get in Touch
+          </Link>
         </div>
       </Drawer>
     </div>

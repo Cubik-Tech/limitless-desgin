@@ -100,7 +100,7 @@ body {
   position: relative;
   background: #000;
   margin: 3px;
-  border-radius: 100px;
+  /* border-radius: 100px; */
 }
 .gradient_border::after {
   content: "";
@@ -179,11 +179,11 @@ body {
   }
 
   .services_herotext {
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .subHeadingtext {
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .subHeadingSmText {
@@ -196,6 +196,50 @@ body {
 
   .description_text {
     font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  .herotext {
+    font-size: 80px;
+  }
+
+  .subHeadingtext {
+    font-size: 40px;
+  }
+
+  .subHeadingSmText {
+    font-size: 35px;
+  }
+
+  .subHeadingxsText {
+    font-size: 22px;
+  }
+
+  .description_text {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .herotext {
+    font-size: 100px;
+  }
+
+  .subHeadingtext {
+    font-size: 45px;
+  }
+
+  .subHeadingSmText {
+    font-size: 40px;
+  }
+
+  .subHeadingxsText {
+    font-size: 25px;
+  }
+
+  .description_text {
+    font-size: 18px;
   }
 }
 
@@ -278,7 +322,7 @@ body {
 .slide-up-animation {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 .slide-up-animation.active {
