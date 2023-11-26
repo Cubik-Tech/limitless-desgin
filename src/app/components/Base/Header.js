@@ -35,7 +35,7 @@ const Header = () => {
     if (typeof window !== "undefined" && width > 0) {
       setLoading(false);
     }
-  }, [window, width]);
+  }, [width]);
 
   return (
     !loading && (
